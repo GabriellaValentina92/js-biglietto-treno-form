@@ -1,26 +1,33 @@
+// variabili globali
 
-// let km_number = parseInt(prompt('Inserire il numero dei kilometri da percorrere'));
+let Name = document.getElementById('#first_lastname');
+let km_number = document.querySelector('#distance_km'); 
+let age = document.querySelector('#age');
+let btnGenerator = document.querySelector('.btn-ticket');
+let btnDelete = document.querySelector('.btn-delete');
 
-// let age = parseInt(prompt('Inserire età del passeggero'));
+// calcolo ticket
+let price = (km_number * 0.21);
 
-// let price = (km_number * 0.21);
+let discountYoung = price - (price * 20 / 100);
+let discountaged = price - (price * 40 / 100);
 
-// let discountYoung = price - (price * 20 / 100);
-// let discountaged = price - (price * 40 / 100);
+let discount = discountYoung.toFixed(2)
+let Discount = discountaged.toFixed(2)
 
-// let discount = discountYoung.toFixed(2)
-// let Discount = discountaged.toFixed(2)
 
-// let value = (' il valore inserito non è un numero')
+if (age < 18){
+    btnGenerator.innerHTML = discount;
+} else if (age > 65){
+    btnGenerator.innerHTML = Discount;
+}else {
+    btnGenerator.innerHTML = price;
+}
 
-// if (isNaN(km_number) || isNaN(age)) {
-// 	document.getElementById('ticket').innerHTML = value;
-// } else {
-//     if (age < 18){
-//         document.getElementById('ticket').innerHTML = discount;
-//     } else if (age > 65){
-//         document.getElementById('ticket').innerHTML = Discount;
-//     }else {
-//         document.getElementById('ticket').innerHTML = price;
-//     }
+// const btn = function (){
+//     document.querySelector('.btn-ticket').addEventListener ('click' , ticket-price);
+// }
+
+// const Btn = function (){
+//     document.querySelector('.btn-delete').addEventListener ('click' , reset);
 // }
