@@ -29,6 +29,4 @@ btnGenerator.addEventListener('click' , function(){
     }else {
         price = (km_number * 0.21)
     }
-})
-
-document.getElementById('#first_lastname').innerHTML = 'il tuo nome è:  
+}) 
