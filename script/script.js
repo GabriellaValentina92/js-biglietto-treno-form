@@ -1,32 +1,33 @@
 // variabili globali
-let Name = document.getElementById('#first_lastname');
-let km_number = document.querySelector('#distance_km'); 
-let age = document.querySelector('#age');
 let btnGenerator = document.querySelector('.btn-ticket');
-let btnDelete = document.querySelector('.btn-delete');
+let btnReset = document.querySelector('.btn-reset');
 
 
 btnGenerator.addEventListener('click' , function(){
+    // const user_name = document.getElementById("#username").value;
+    const km_number = document.getElementById("#distance_km").value; 
+    const age = document.getElementById("#age").value;
+    const Ticket = document.getElementById('#ticket');
     
-    let Name = document.getElementById('#first_lastname');
-    let km_number = document.querySelector('#distance_km'); 
-    let age = document.querySelector('#age').value;
     
-    // calcolo ticket
-    let price = (km_number.value * 0.21);
-    
+    let price = km_number * 0.21;
+
     let discountYoung = price - (price * 20 / 100);
     let discountaged = price - (price * 40 / 100);
-    
-    let discount = discountYoung.toFixed(2)
-    let Discount = discountaged.toFixed(2)
-    
-    
-    if (age === under 18){
-        discountYoung = price - (price * 20 / 100)
-    } else if (age === over 65){
-        discountaged = price - (price * 40 / 100)
+
+
+    if (age > 0 && age < 17){
+        Ticket.innerHTML = discountYoung.toFixed(2);
+    } else if (age >= 65){
+        Ticket.innerHTML = discountaged.toFixed(2);
     }else {
-        price = (km_number * 0.21)
+        Ticket.innerHTML = price;
     }
 }) 
+
+btnReset.addEventListener('click' , function() {
+    // user_name.value = '';
+    km_number.value = '';
+	age.value = '';
+	Ticket.innerHTML = '';
+})

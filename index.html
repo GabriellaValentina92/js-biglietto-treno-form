@@ -12,29 +12,32 @@
     <h1> CALCOLA IL TUO BIGLIETTO</h1>
     <div class="form-container">
         <div>
-            <label for="first_lastname"> Nome e Cognome</label>
-            <input type="text" id="first_lastname" name="first-lastaname" value="name">
+            <label for="username"> Nome e Cognome</label>
+            <input type="text" id="username">
         </div>
 
         <div>
             <label for="distance_km"> km da percorrere</label>
-            <input type="text" id="distance_km" name="distance-in-km" value="km">
+            <input type="number" id="distance_km" name="distance-in-km">
         </div>
 
         <div>
             <label for="age"> Età</label>
             <select name="age" id="age">
-                <option value="age">under 18</option>
-                <option value="age"> over 18</option>
-                <option value="age"> over 65</option>
+                <option value="age">0-17</option>
+                <option value="age">65</option>
+                <option value="age"> 18-64</option>
             </select>
         </div>
 
         <div>
             <button class="btn-ticket"> Genera</button>
-            <button class="btn-delete"> Annulla</button>
+            <button class="btn-reset"> Annulla</button>
         </div>
+
+        <p> Costo del biglietto: <span id="ticket"></span></p>
     </div>
+
     
 </body>
 </html>
